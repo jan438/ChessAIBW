@@ -88,6 +88,7 @@ class Boardai:
                                 chess_piecesai[x][y] = piecesai.Queen(x, y, piecesai.Piece.BLACK, id="BlackQueen")
                             if sid[0] == 'K':
                                 chess_piecesai[x][y] = piecesai.King(x, y, piecesai.Piece.BLACK, id="BlackKing")
+                    file.close()
                     return cls(chess_piecesai, False, False)
             except IOError: 
                 print("Error: File does not appear to exist.")
