@@ -62,6 +62,9 @@ class Boardai:
                         sid = row[1]
                         x = ord(row[2]) - 48
                         y = 7 - (ord(row[3]) - 48)
+                        f = row[4]
+                        if row[0] == 'C':
+                            print(sid)
                         if row[0] == 'W':
                             if sid[0] == 'P':
                                 chess_piecesai[x][y] = piecesai.Pawn(x, y, piecesai.Piece.WHITE, id="WhitePawn_"+sid[1])
