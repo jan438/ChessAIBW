@@ -1,4 +1,4 @@
-import boardai, pieces, ai
+import boardai, piecesai, ai
 from move import Move
 import os
 import sys
@@ -28,7 +28,7 @@ def get_valid_user_move(boardai):
     while True:
         move = get_user_move()
         valid = False
-        possible_moves = boardai.get_possible_moves(pieces.Piece.WHITE)
+        possible_moves = boardai.get_possible_moves(piecesai.Piece.WHITE)
         # No possible moves
         if (not possible_moves):
             return 0
@@ -80,7 +80,7 @@ print(boardai.to_string())
 while True:
     move = get_valid_user_move(boardai)
     if (move == 0):
-        if (boardai.is_check(pieces.Piece.WHITE)):
+        if (boardai.is_check(piecesai.Piece.WHITE)):
             print("Checkmate. Black Wins.")
             break
         else:
@@ -94,7 +94,7 @@ while True:
 
     ai_move = ai.AI.get_ai_move(boardai, [])
     if (ai_move == 0):
-        if (boardai.is_check(pieces.Piece.BLACK)):
+        if (boardai.is_check(piecesai.Piece.BLACK)):
             print("Checkmate. White wins.")
             break
         else:
