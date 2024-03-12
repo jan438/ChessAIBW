@@ -78,6 +78,7 @@ class Boardai:
                                 chess_piecesai[x][y] = piecesai.Queen(x, y, piecesai.Piece.WHITE, id="WhiteQueen")
                             if sid[0] == 'K':
                                 chess_piecesai[x][y] = piecesai.King(x, y, piecesai.Piece.WHITE, id="WhiteKing")
+                                cls.white_king_moved = f
                         if row[0] == 'B':
                             if sid[0] == 'P':
                                 chess_piecesai[x][y] = piecesai.Pawn(x, y, piecesai.Piece.BLACK, id="BlackPawn_"+sid[1])
@@ -91,6 +92,7 @@ class Boardai:
                                 chess_piecesai[x][y] = piecesai.Queen(x, y, piecesai.Piece.BLACK, id="BlackQueen")
                             if sid[0] == 'K':
                                 chess_piecesai[x][y] = piecesai.King(x, y, piecesai.Piece.BLACK, id="BlackKing")
+                                cls.black_king_moved = f
                     file.close()
                     return cls(chess_piecesai, False, False)
             except IOError: 
