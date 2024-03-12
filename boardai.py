@@ -47,9 +47,9 @@ class Boardai:
     def new(cls):
         chess_piecesai = [[0 for x in range(Boardai.WIDTH)] for y in range(Boardai.HEIGHT)]
         if sys.platform[0] == 'l':
-            path = '/home/jan/git/ChessPuzzleAI'
+            path = '/home/jan/git/ChessAIBW'
         if sys.platform[0] == 'w':
-            path = "C:/Users/janbo/OneDrive/Documents/GitHub/ChessPuzzleAI"
+            path = "C:/Users/janbo/OneDrive/Documents/GitHub/ChessAIBW"
         try:
             os.chdir(path)
             #print("Current working directory: {0}".format(os.getcwd()))
