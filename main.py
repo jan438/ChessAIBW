@@ -69,11 +69,6 @@ def letter_to_xpos(letter):
 #
 # Entry point.
 #
-if sys.platform[0] == 'l':
-    path = '/home/jan/git/ChessAIBW'
-if sys.platform[0] == 'w':
-    path = "C:/Users/janbo/OneDrive/Documents/GitHub/ChessAIBW"
-
 boardai = boardai.Boardai.new()
 print(boardai.to_string())
 
