@@ -1,5 +1,11 @@
 import boardai, pieces, ai
 from move import Move
+import os
+import sys
+import platform
+import sysconfig
+import csv
+import time
 
 # Returns a move object based on the users input. Does not check if the move is valid.
 def get_user_move():
@@ -63,6 +69,11 @@ def letter_to_xpos(letter):
 #
 # Entry point.
 #
+if sys.platform[0] == 'l':
+    path = '/home/jan/git/ChessAIBW'
+if sys.platform[0] == 'w':
+    path = "C:/Users/janbo/OneDrive/Documents/GitHub/ChessAIBW"
+
 boardai = boardai.Boardai.new()
 print(boardai.to_string())
 
