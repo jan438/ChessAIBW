@@ -73,30 +73,31 @@ boardai = boardai.Boardai.new()
 print("Human ", boardai.human)
 print(boardai.to_string())
 
-while True:
-    move = get_valid_user_move(boardai)
-    if (move == 0):
-        if (boardai.is_check(piecesai.Piece.WHITE)):
-            print("Checkmate. Black Wins.")
-            break
-        else:
-            print("Stalemate.")
-            break
+if boardai.human == "White":
+    while True:
+        move = get_valid_user_move(boardai)
+        if (move == 0):
+            if (boardai.is_check(piecesai.Piece.WHITE)):
+                print("Checkmate. Black Wins.")
+                break
+            else:
+                print("Stalemate.")
+                break
 
-    boardai.perform_move(move)
+        boardai.perform_move(move)
 
-    print("User move: " + move.to_string())
-    print(boardai.to_string())
+        print("User move: " + move.to_string())
+        print(boardai.to_string())
 
-    ai_move = ai.AI.get_ai_move(boardai, [])
-    if (ai_move == 0):
-        if (boardai.is_check(piecesai.Piece.BLACK)):
-            print("Checkmate. White wins.")
-            break
-        else:
-            print("Stalemate.")
-            break
+        ai_move = ai.AI.get_ai_move(boardai, [])
+        if (ai_move == 0):
+            if (boardai.is_check(piecesai.Piece.BLACK)):
+                print("Checkmate. White wins.")
+                break
+            else:
+                print("Stalemate.")
+                break
 
-    boardai.perform_move(ai_move)
-    print("AI move: " + ai_move.to_string())
-    print(boardai.to_string())
+        boardai.perform_move(ai_move)
+        print("AI move: " + ai_move.to_string())
+        print(boardai.to_string())
