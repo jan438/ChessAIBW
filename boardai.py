@@ -65,7 +65,6 @@ class Boardai:
                         y = 7 - (ord(row[3]) - 48)
                         f = row[4]
                         if row[0] == 'C':
-                            print(sid)
                             cls.human = sid
                         if row[0] == 'W':
                             if sid[0] == 'P':

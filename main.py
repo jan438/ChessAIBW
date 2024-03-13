@@ -70,6 +70,7 @@ def letter_to_xpos(letter):
 # Entry point.
 #
 boardai = boardai.Boardai.new()
+print("Human ", boardai.human)
 print(boardai.to_string())
 
 while True:
