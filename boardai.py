@@ -12,10 +12,11 @@ class Boardai:
     WIDTH = 8
     HEIGHT = 8
 
-    def __init__(self, chesspiecesai, white_king_moved, black_king_moved):
+    def __init__(self, chesspiecesai, white_king_moved, black_king_moved, human):
         self.chesspiecesai = chesspiecesai
         self.white_king_moved = white_king_moved
         self.black_king_moved = black_king_moved
+        self.human = human
         
     def listpieces(self):
         count = 0
@@ -41,7 +42,7 @@ class Boardai:
                 piece = chessboardai.chesspiecesai[x][y]
                 if (piece != 0):
                     chesspiecesai[x][y] = piece.clone()
-        return cls(chesspiecesai, chessboardai.white_king_moved, chessboardai.black_king_moved)
+        return cls(chesspiecesai, chessboardai.white_king_moved, chessboardai.black_king_moved, chessboardai.human)
 
     @classmethod
     def new(cls):
@@ -65,6 +66,7 @@ class Boardai:
                         f = row[4]
                         if row[0] == 'C':
                             print(sid)
+                            cls.human = sid
                         if row[0] == 'W':
                             if sid[0] == 'P':
                                 chess_piecesai[x][y] = piecesai.Pawn(x, y, piecesai.Piece.WHITE, id="WhitePawn_"+sid[1])
@@ -94,7 +96,7 @@ class Boardai:
                                 chess_piecesai[x][y] = piecesai.King(x, y, piecesai.Piece.BLACK, id="BlackKing")
                                 cls.black_king_moved = f
                     file.close()
-                    return cls(chess_piecesai, False, False)
+                    return cls(chess_piecesai, False, False, cls.human)
             except IOError: 
                 print("Error: File does not appear to exist.")
             except Exception as err:
@@ -134,7 +136,7 @@ class Boardai:
         chess_piecesai[4][0] = piecesai.King(4, 0, piecesai.Piece.BLACK, id="BlackKing")
         chess_piecesai[3][0] = piecesai.Queen(3, 0, piecesai.Piece.BLACK, id="BlackQueen")
 
-        return cls(chess_piecesai, False, False)
+        return cls(chess_piecesai, False, False, cls.human)
 
     def get_possible_moves(self, color):
         moves = []
