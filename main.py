@@ -85,12 +85,9 @@ if boardai.human == "White":
             else:
                 print("Stalemate.")
                 break
-
         boardai.perform_move(move)
-
         print("User move: " + move.to_string())
         print(boardai.to_string())
-
         ai_move = ai.AI.get_ai_move(boardai, [], aicolor)
         if (ai_move == 0):
             if (boardai.is_check(aicolor)):
@@ -99,7 +96,33 @@ if boardai.human == "White":
             else:
                 print("Stalemate.")
                 break
-
         boardai.perform_move(ai_move)
         print("AI move: " + ai_move.to_string())
+        print(boardai.to_string())
+        
+if boardai.human == "Black":
+    hmcolor = piecesai.Piece.BLACK
+    aicolor = piecesai.Piece.WHITE
+    while True:
+        ai_move = ai.AI.get_ai_move(boardai, [], aicolor)
+        if (ai_move == 0):
+            if (boardai.is_check(aicolor)):
+                print("Checkmate. White wins.")
+                break
+            else:
+                print("Stalemate.")
+                break
+        boardai.perform_move(ai_move)
+        print("AI move: " + ai_move.to_string())
+        print(boardai.to_string())
+        move = get_valid_user_move(boardai)
+        if (move == 0):
+            if (boardai.is_check(hmcolor)):
+                print("Checkmate. Black Wins.")
+                break
+            else:
+                print("Stalemate.")
+                break
+        boardai.perform_move(move)
+        print("User move: " + move.to_string())
         print(boardai.to_string())
