@@ -70,7 +70,7 @@ def letter_to_xpos(letter):
 # Entry point.
 #
 boardai = boardai.Boardai.new()
-print("Human ", boardai.human)
+print("Human ", boardai.human, "Alg ", boardai.alg)
 print(boardai.to_string())
 
 if boardai.human == "White":
