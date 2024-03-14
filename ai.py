@@ -105,7 +105,7 @@ class AI:
     INFINITE = 10000000
 
     @staticmethod
-    def get_ai_move(chessboardai, invalid_moves, aicolor):
+    def get_ai_move(chessboardai, invalid_moves, aicolor, hmcolor):
         best_move = 0
         best_score = AI.INFINITE
         for move in chessboardai.get_possible_moves(aicolor):
