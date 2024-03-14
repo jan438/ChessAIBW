@@ -91,7 +91,7 @@ if boardai.human == "White":
         print("User move: " + move.to_string())
         print(boardai.to_string())
 
-        ai_move = ai.AI.get_ai_move(boardai, [])
+        ai_move = ai.AI.get_ai_move(boardai, [], aicolor)
         if (ai_move == 0):
             if (boardai.is_check(aicolor)):
                 print("Checkmate. White wins.")
