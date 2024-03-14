@@ -108,7 +108,7 @@ class AI:
     def get_ai_move(chessboardai, invalid_moves, aicolor):
         best_move = 0
         best_score = AI.INFINITE
-        for move in chessboardai.get_possible_moves(piecesai.Piece.BLACK):
+        for move in chessboardai.get_possible_moves(aicolor):
             if (AI.is_invalid_move(move, invalid_moves)):
                 continue
 
