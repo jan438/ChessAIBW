@@ -74,10 +74,12 @@ print("Human ", boardai.human)
 print(boardai.to_string())
 
 if boardai.human == "White":
+    hmcolor = piecesai.Piece.WHITE
+    aicolor = piecesai.Piece.BLACK
     while True:
         move = get_valid_user_move(boardai)
         if (move == 0):
-            if (boardai.is_check(piecesai.Piece.WHITE)):
+            if (boardai.is_check(hmcolor)):
                 print("Checkmate. Black Wins.")
                 break
             else:
@@ -91,7 +93,7 @@ if boardai.human == "White":
 
         ai_move = ai.AI.get_ai_move(boardai, [])
         if (ai_move == 0):
-            if (boardai.is_check(piecesai.Piece.BLACK)):
+            if (boardai.is_check(aicolor)):
                 print("Checkmate. White wins.")
                 break
             else:
