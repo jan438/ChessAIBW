@@ -28,7 +28,7 @@ def get_valid_user_move(boardai):
     while True:
         move = get_user_move()
         valid = False
-        possible_moves = boardai.get_possible_moves(piecesai.Piece.WHITE)
+        possible_moves = boardai.get_possible_moves(hmcolor)
         # No possible moves
         if (not possible_moves):
             return 0
