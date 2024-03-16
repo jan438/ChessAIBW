@@ -9,7 +9,7 @@ import time
 
 # Returns a move object based on the users input. Does not check if the move is valid.
 def get_user_move():
-    print("Example Move: A2 A4")
+    print("Example Move: A2 A4 " + boardai.human)
     move_str = input("Your Move: ")
     move_str = move_str.replace(" ", "")
 
